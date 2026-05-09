@@ -36,7 +36,8 @@ export interface GigSlot {
 
 function generateOrder(): SimOrder {
   const platform = randomFrom(PLATFORMS)
-  const zone = randomFrom(ZONES)
+  const allZones = Object.values(CITIES).flat()
+  const zone = randomFrom(allZones)
   const riders = randomInt(1, 80)
   const tier = riders <= 10 ? 'basic' : riders <= 50 ? 'standard' : 'surge'
   const mult = ZONE_MULTIPLIERS[zone] ?? 1.0
