@@ -117,8 +117,14 @@ export function RiderDispatchMap({ order, rider, dispatchEvent, onOTPVerified, o
       routeRef.current = directionsRenderer
 
       directionsService.route({
-        origin: { lat: rider.latitude ?? center.lat, lng: rider.longitude ?? center.lng },
-        destination: { lat: dispatchEvent.pickup_lat!, lng: dispatchEvent.pickup_lng! },
+origin: { 
+  lat: dispatchEvent.rider_lat ?? 12.9716, 
+  lng: dispatchEvent.rider_lng ?? 77.5946 
+},
+destination: { 
+  lat: dispatchEvent.pickup_lat!, 
+  lng: dispatchEvent.pickup_lng! 
+},
         travelMode: window.google.maps.TravelMode.DRIVING
       }, (result: any, status: any) => {
         if (status === 'OK') {
