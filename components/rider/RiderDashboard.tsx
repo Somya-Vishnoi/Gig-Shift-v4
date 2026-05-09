@@ -94,7 +94,7 @@ export function RiderDashboard({ rider, onLogout, onLanguageChange }: RiderDashb
 
     // Create order in DB
     const order = await createOrder({
-      platform_id: slot.platformId ?? 'sim',
+      platform_id: null,
       platform_name: slot.platform,
       zone: slot.zone,
       riders_requested: 1,
