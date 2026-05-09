@@ -118,7 +118,7 @@ export interface Platform {
 // ─── ORDER ────────────────────────────────────────────────────────────────────
 export interface Order {
   id: string
-  platform_id: string
+  platform_id: string | null
   platform_name: string
   zone: string
   riders_requested: number
